@@ -1,0 +1,69 @@
+:root {
+  --brand: #2563eb;
+  --accent: #22c55e;
+  --surface: #ffffff;
+  --background: #f5f7fb;
+  --text: #1f2937;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: sans-serif; background: var(--background); color: var(--text); }
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  min-height: 100vh;
+}
+
+.header,
+.card {
+  display: flex;
+}
+
+.header {
+  background: var(--surface);
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.sidebar {
+  background: var(--surface);
+  padding: 20px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: var(--surface);
+  padding: 20px;
+  border-radius: 12px;
+  flex-direction: column;
+  gap: 10px;
+  transition: 0.25s;
+}
+
+.card:hover,
+.card:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card-amount { font-size: 22px; font-weight: bold; }
+.card-title { color: #6b7280; font-size: 14px; }
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
